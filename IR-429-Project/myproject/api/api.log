@@ -1,0 +1,23 @@
+2024-04-22 20:22:01,183:ERROR:Failed to load the model or data: name 'json' is not defined
+2024-04-22 20:22:01,194:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-22 20:22:01,195:INFO:[33mPress CTRL+C to quit[0m
+2024-04-22 20:22:01,196:INFO: * Restarting with stat
+2024-04-22 20:22:01,739:ERROR:Failed to load the model or data: name 'json' is not defined
+2024-04-22 20:22:01,745:WARNING: * Debugger is active!
+2024-04-22 20:22:01,746:INFO: * Debugger PIN: 864-803-802
+2024-04-22 21:31:26,978:ERROR:Failed to load the model or data: name 'json' is not defined
+2024-04-22 21:31:27,001:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-22 21:31:27,003:INFO:[33mPress CTRL+C to quit[0m
+2024-04-22 21:31:27,006:INFO: * Restarting with stat
+2024-04-22 21:31:28,253:ERROR:Failed to load the model or data: name 'json' is not defined
+2024-04-22 21:31:28,263:WARNING: * Debugger is active!
+2024-04-22 21:31:28,265:INFO: * Debugger PIN: 864-803-802
+2024-04-22 21:37:56,733:INFO: * Detected change in '/home/bsunkari/.local/lib/python3.10/site-packages/sklearn/tree/tests/__init__.py', reloading
+2024-04-22 21:37:56,936:INFO: * Restarting with stat
+2024-04-22 21:37:58,372:ERROR:Failed to load the model or data: name 'json' is not defined
+2024-04-22 21:37:58,385:WARNING: * Debugger is active!
+2024-04-22 21:37:58,389:INFO: * Debugger PIN: 864-803-802
+2024-04-22 21:38:17,534:INFO:Home route accessed
+2024-04-22 21:38:17,561:INFO:127.0.0.1 - - [22/Apr/2024 21:38:17] "[35m[1mGET / HTTP/1.1[0m" 500 -

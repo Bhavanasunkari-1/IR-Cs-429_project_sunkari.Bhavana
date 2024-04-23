@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Interface</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { margin: 10px 0; padding: 10px; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; margin-top: 5px; background-color: #f9f9f9; border: 1px solid #ddd; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Book Search API</h1>
+        <input type="text" v-model="query" placeholder="Enter search term...">
+        <button @click="searchBooks">Search</button>
+        <div v-if="error" class="error">{{ error }}</div>
+        <ul>
+            <li v-for="book in results" :key="book.title">
+                {{ book.title }} - Score: {{ book.score.toFixed(2) }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                query: '',
+                results: [],
+                error: ''
+            },
+            methods: {
+                searchBooks() {
+                    fetch('/search', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ query: this.query, top_k: 5 })
+                    })
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok.');
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.error) {
+                            this.error = data.error;
+                            this.results = [];
+                        } else {
+                            this.results = data;
+                            this.error = '';
+                        }
+                    })
+                    .catch(error => {
+                        this.error = error.message;
+                        this.results = [];
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
